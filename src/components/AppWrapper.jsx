@@ -29,7 +29,7 @@ const Preloader = () => {
         {/* Logo text */}
         <div className="absolute top-20 left-1/2 -translate-x-1/2 whitespace-nowrap">
           <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent animate-pulse">
-            John Executive
+            kevin Obote
           </span>
         </div>
       </div>
@@ -76,7 +76,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              John Executive
+              Kevin Obote
             </h3>
             <p className="text-gray-400 max-w-md">
               Building innovative solutions with cutting-edge technology. 
@@ -124,7 +124,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} John Executive. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kevin Obote. All rights reserved.</p>
         </div>
       </div>
     </footer>

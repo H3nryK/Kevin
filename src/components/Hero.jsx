@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Linkedin, Twitter, Github, Mail, Calendar, MapPin, Award } from 'lucide-react';
+import { ArrowRight, Linkedin, Twitter, Github, Mail } from 'lucide-react';
 import Profile from '../assets/profile.jpg';
 
 const Hero = () => {
@@ -26,35 +26,11 @@ const Hero = () => {
           <div className="space-y-4">
             <div className="inline-block">
               <h1 className="text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                John Executive
+                Kevin Obote
               </h1>
             </div>
-            <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light">
-              CEO & Strategic Innovation Leader
-            </p>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 py-6">
-            {[
-              { icon: Award, label: "Experience", value: "15+ Years" },
-              { icon: Calendar, label: "Projects", value: "200+" },
-              { icon: MapPin, label: "Global Reach", value: "25+ Countries" }
-            ].map((stat, index) => (
-              <div key={index} className="p-4 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg transform hover:scale-105 transition-all duration-300">
-                <stat.icon className="w-6 h-6 mx-auto mb-2 text-blue-600 dark:text-blue-400" />
-                <p className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</p>
-                <p className="text-lg font-bold text-gray-900 dark:text-white">{stat.value}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bio */}
-          <div className="prose dark:prose-invert max-w-none">
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Driving digital transformation and innovation across industries with a 
-              proven track record of building successful organizations. Specialized in 
-              AI integration, sustainable growth strategies, and fostering innovative culture.
+            <p className="text-sm lg:text-xl text-gray-600 dark:text-gray-300 font-light">
+                CEO | Data Scientist | Software Engineer| Product Manager
             </p>
           </div>
 

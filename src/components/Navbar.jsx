@@ -24,13 +24,13 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
-              John Executive
+              Kevin Obote
             </span>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {['About', 'Experience', 'Projects', 'LinkedIn', 'Contact'].map((item) => (
+            {['Experience', 'Testimonials', 'Projects'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
