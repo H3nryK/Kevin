@@ -17,7 +17,7 @@ const Preloader = () => {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900">
+    <div className="fixed inset-0 z-[500px] flex items-center justify-center bg-gray-900">
       <div className="relative">
         {/* Animated circles */}
         <div className="absolute inset-0 flex items-center justify-center">

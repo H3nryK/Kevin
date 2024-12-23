@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Linkedin, Twitter, Github, Mail } from 'lucide-react';
+import { ArrowRight, Linkedin, Twitter, Github, Mail, Icon } from 'lucide-react';
 import Profile from '../assets/profile.jpg';
+import { FaLinkedin } from "react-icons/fa";
+import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
+import { BiLogoGmail } from "react-icons/bi";
+import { FiInstagram } from "react-icons/fi";
+import { color } from 'framer-motion';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +35,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className="text-sm lg:text-xl text-gray-600 dark:text-gray-300 font-light">
-                CEO | Data Scientist | Software Engineer| Product Manager
+                CEO | Data Scientist | Software Engineer | Product Manager
             </p>
           </div>
 
@@ -50,10 +55,11 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex items-center gap-6 justify-center lg:justify-start pt-4">
             {[
-              { Icon: Linkedin, color: "hover:text-blue-600" },
-              { Icon: Twitter, color: "hover:text-blue-400" },
-              { Icon: Github, color: "hover:text-gray-900 dark:hover:text-white" },
-              { Icon: Mail, color: "hover:text-red-500" }
+              { Icon: FaLinkedin, color: "hover:text-blue-600" },
+              { Icon: FaXTwitter, color: "hover:text-blue-400" },
+              { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white" },
+              { Icon: BiLogoGmail, color: "hover:text-red-500" },
+              { Icon: FiInstagram, color: "hover:text-red-300"}
             ].map((social, index) => (
               <social.Icon 
                 key={index}
@@ -79,9 +85,14 @@ const Hero = () => {
               />
               
               {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-sm font-light">Transforming businesses through innovation</p>
+                  <p className="text-sm font-light">
+                  I’m a dynamic tech professional specializing in data science, machine learning, software engineering, ERP, and web development. 
+                  I excel at transforming data into actionable insights through predictive modeling, analysis, and visualizations. 
+                  With a passion for driving innovation, I also offer technology training, research, and user experience optimization. 
+                  Let’s work together to bring data-driven strategies and impactful software solutions to life.
+                  </p>
                 </div>
               </div>
             </div>
