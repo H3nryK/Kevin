@@ -17,16 +17,16 @@ const ContactSection = () => {
 
   const references = [
     {
-      name: "John Smith",
-      title: "Senior Project Manager",
-      company: "Tech Solutions Inc",
-      contact: "+1 (555) 987-6543"
+      name: "Francis",
+      title: "Client Relations Manager",
+      company: "eProd Solutions Limited",
+      contact: "+254 716 163 623"
     },
     {
-      name: "Sarah Johnson",
-      title: "Director of Operations",
-      company: "Global Enterprises",
-      contact: "+1 (555) 234-5678"
+      name: "Kevin Ng'ang'a",
+      title: "Software Engineer",
+      company: "Safaricom PLC",
+      contact: "+254 710 716 758"
     }
   ];
 

@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Twitter, ExternalLink } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ExternalLink } from 'lucide-react';
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
+import { BiLogoGmail } from "react-icons/bi";
+import { FiInstagram } from "react-icons/fi";
 
 // Preloader Component
 const Preloader = () => {
@@ -52,16 +56,18 @@ const Footer = () => {
   }, []);
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:contact@example.com', label: 'Email' },
+    { icon: FaSquareGithub, href: 'https://github.com', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FaXTwitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: BiLogoGmail, href: 'mailto:contact@example.com', label: 'Email' },
+    { icon: FiInstagram, href: 'https://instagram.com/', label: 'Instagram' },
+    { icon: FaWhatsapp, href: 'https://wa.me.com/', label: 'Whatsapp' },
   ];
 
   const footerLinks = [
-    { label: 'About', href: '#about' },
+    { label: 'Experiences', href: '#experience' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -80,7 +86,7 @@ const Footer = () => {
             </h3>
             <p className="text-gray-400 max-w-md">
               Building innovative solutions with cutting-edge technology. 
-              Let's create something amazing together.
+              Let us create something amazing together.
             </p>
           </div>
 
@@ -125,6 +131,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
           <p>© {new Date().getFullYear()} Kevin Obote. All rights reserved.</p>
+          <p className='text-xs mt-4'>Built by <a href='https://guild-code.com/' target='_blank' rel='noopener noreferrer'>Guild Code</a></p>
         </div>
       </div>
     </footer>

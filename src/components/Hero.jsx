@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Linkedin, Twitter, Github, Mail, Icon } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
 import Profile from '../assets/profile.jpg';
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FiInstagram } from "react-icons/fi";
-import { color } from 'framer-motion';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +58,8 @@ const Hero = () => {
               { Icon: FaXTwitter, color: "hover:text-blue-400" },
               { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white" },
               { Icon: BiLogoGmail, color: "hover:text-red-500" },
-              { Icon: FiInstagram, color: "hover:text-red-300"}
+              { Icon: FiInstagram, color: "hover:text-red-300"},
+              { Icon: FaWhatsapp, color: "hover:text-green-600"}
             ].map((social, index) => (
               <social.Icon 
                 key={index}
