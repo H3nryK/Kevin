@@ -1,33 +1,46 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, ChartBar, Globe, Code } from 'lucide-react';
+import { ExternalLink, Globe } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
-    title: "Market Expansion Strategy",
-    description: "Spearheaded international market penetration across APAC region, resulting in 200% YoY revenue growth through strategic partnerships and localized marketing initiatives.",
-    link: "https://example.com/market-expansion",
+    title: "Sema",
+    description: "This project aims to build a comprehensive system capable of transcribing audio into text in multiple languages and conducting sentiment analysis on the transcribed text.",
+    link: "https://github.com/Kevinobote/Sema",
     icon: Globe,
-    stats: "200% Growth • 5 Markets • $10M Revenue",
     tags: ["International", "Growth", "Strategy"]
   },
   {
     id: 2,
-    title: "AI-Powered Digital Transformation",
-    description: "Revolutionized operations through implementation of machine learning algorithms and process automation, achieving 40% reduction in operational costs while improving accuracy.",
-    link: "https://example.com/digital-transformation",
-    icon: Code,
-    stats: "40% Cost Reduction • 98% Automation",
-    tags: ["AI/ML", "Automation", "Innovation"]
+    title: "Wave Energy Farm Optimization",
+    description: "Wave energy is a promising renewable energy source that captures the energy from ocean waves to generate electricity.",
+    link: "https://github.com/Kevinobote/WEC",
+    icon: Globe,
+    tags: ["Machine Learning", "Energy", "Optimization"]
   },
   {
     id: 3,
-    title: "Revenue Optimization Program",
-    description: "Designed and executed comprehensive revenue optimization strategy, implementing dynamic pricing and customer segmentation to achieve record-breaking profit margins.",
-    link: "https://example.com/revenue-optimization",
-    icon: ChartBar,
-    stats: "150% Profit Increase • $25M Revenue",
-    tags: ["Finance", "Analytics", "Growth"]
+    title: "Predicting House Price",
+    description: "Predicting house prices using a combination of Linear Regression and Random Forest models. The approach includes data preprocessing, model training, evaluation, and preparing the final submission.",
+    link: "https://github.com/Kevinobote/House-Price/blob/main/README.MD",
+    icon: Globe,
+    tags: ["Machine Learning", "Energy", "Optimization"]
+  },
+  {
+    id: 4,
+    title: "Due-Diligence-Project",
+    description: "This project aims to demonstrate various data manipulation and analysis tasks using Python. It involves working with Excel datasets, cleaning and organizing data, web scraping, and performing text analysis tasks such as topic modeling and sentiment analysis. Additionally, it includes automating email tasks and converting image files to Excel format.",
+    link: "https://github.com/Kevinobote/Due-Diligence-Project/blob/main/README.md",
+    icon: Globe,
+    tags: ["Machine Learning", "Energy", "Optimization"]
+  },
+  {
+    id: 5,
+    title: "Well-being Index of Galaxies",
+    description: "The project aims to determine the demographic and socio-economic determinants of the well-being index of galaxies over a period of time and predict future well-being values using machine learning techniques.",
+    link: "https://github.com/Kevinobote/Well-being-index-of-Galaxies",
+    icon: Globe,
+    tags: ["Machine Learning", "Energy", "Optimization"]
   }
 ];
 
@@ -61,10 +74,6 @@ const ProjectCard = ({ project }) => {
       <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
         {project.description}
       </p>
-
-      <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-        {project.stats}
-      </div>
 
       <a
         href={project.link}
