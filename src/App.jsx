@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
-import ContactSection from './components/Contact';
 import AppWrapper from './components/AppWrapper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Main from './pages/main';
+import ExperiencePage from './pages/experience_page';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -24,11 +23,13 @@ const App = () => {
           toggleMenu={toggleMenu}
         />
 
-        <Hero />
-        <Experience />
-        <Testimonials />
-        <Projects />
-        <ContactSection />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+          </Routes>
+        </Router>
+
       </AppWrapper>
     </div>
   );
