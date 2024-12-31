@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Briefcase, Award, Calendar, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, ArrowUpRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { GiArchiveResearch } from "react-icons/gi";
 import { FaDatabase, FaUserInjured } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
@@ -162,51 +162,6 @@ const work_experiences = [
     }
 ].sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
 
-const volunteer_experiences = [
-    {
-      id: 1,
-      role: "Data Analyst Path Lead",
-      company: "Genesys Tech Hub",
-      duration: "March 2024 - Present",
-      startDate: "2024",
-      achievements: [
-        "Prepared Data Analysis Curriculum.",
-        "Coordinated with mentors for tutoring.",
-        "Mentored data analysis students on data analysis trends and practices.",
-      ],
-      skills: ["Leadership", "Strategic Planning", "Digital Transformation"],
-      icon: FaDatabase
-    },
-    {
-      id: 2,
-      role: "Web Development Mentor",
-      company: "Genesys Tech Hub",
-      duration: "March 2022 - October 2023",
-      startDate: "2022",
-      achievements: [
-        "Tutored web development track.",
-        "Mentored web development students on web development trends.",
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: GiSpiderWeb,
-    },
-    {
-      id: 3,
-      role: "Red Cross Volunteer",
-      company: "Red Cross - kenya",
-      duration: "August 2019 - Present",
-      startDate: "2019",
-      achievements: [
-        "Participated in emergency response operations during the COVID-19 pandemic.",
-        "Delivered educational mentorship and organized community outreach programs.",
-        "Certied in First Aid through the Red Cross Foundation.",
-          
-      ],
-      skills: ["Operations Management", "Process Optimization", "Team Leadership"],
-      icon: FaMaskFace,
-    }
-].sort((a, b) => parseInt(b.startDate) - parseInt(a.startDate));
-
 const ExperienceCard = ({ experience }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -300,16 +255,6 @@ const Experience = () => {
         </h2>
         <div className="relative">
           {work_experiences.map((experience) => (
-            <ExperienceCard key={experience.id} experience={experience} />
-          ))}
-        </div>
-      </div>
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp">
-          Volunteer Experience
-        </h2>
-        <div className="relative">
-          {volunteer_experiences.map((experience) => (
             <ExperienceCard key={experience.id} experience={experience} />
           ))}
         </div>
