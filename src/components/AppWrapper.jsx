@@ -62,15 +62,8 @@ const Footer = () => {
     { icon: BiLogoGmail, href: "mailto:kevinobote49@gmail.com", label: "Email" },
     { icon: FiInstagram, href: "https://www.instagram.com/kevin_obote_/", label: "Instagram" },
     { icon: FaWhatsapp, href: "https://wa.me/+254700885748", label: "Whatsapp" },
-  ];  
-
-  const footerLinks = [
-    { label: 'Experiences', href: '#experience' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
   ];
-
+  
   return (
     <footer className={`
       bg-gray-900 text-gray-300 py-12 mt-20 border-t border-gray-800
@@ -94,17 +87,22 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a 
+                  href="/"
+                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Home
+                </a>
+                <a 
+                  href="/experience"
+                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Experience
+                </a>
+              </li>
             </ul>
           </div>
 

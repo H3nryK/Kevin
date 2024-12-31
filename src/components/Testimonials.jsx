@@ -147,7 +147,7 @@ const TestimonialCarousel = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-gray-800 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
+              className="p-3 bg-gray-800/50 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
               onClick={() => paginate(-1)}
             >
               <ChevronLeft className="text-gray-300" size={20} />
@@ -157,7 +157,7 @@ const TestimonialCarousel = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-gray-800 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
+              className="p-3 bg-gray-800/50 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
               onClick={() => paginate(1)}
             >
               <ChevronRight className="text-gray-300" size={20} />
