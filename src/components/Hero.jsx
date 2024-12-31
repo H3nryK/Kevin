@@ -39,15 +39,19 @@ const Hero = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 ease-out transform hover:-translate-y-1">
-              <span className="flex items-center justify-center gap-2">
-                View Projects 
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </button>
-            <button className="px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-600 hover:bg-white/50 dark:hover:bg-gray-800/50 backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-              Contact Me
-            </button>
+            <a href="/projects" className="group">
+              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 ease-out transform hover:-translate-y-1">
+                <span className="flex items-center justify-center gap-2">
+                  View Projects 
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </button>
+            </a>
+            <a href="#contact" className="group">
+              <button className="px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-600 hover:bg-white/50 dark:hover:bg-gray-800/50 backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                Contact Me
+              </button>
+            </a>
           </div>
 
           {/* Social Links */}

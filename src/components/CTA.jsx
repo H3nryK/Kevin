@@ -7,12 +7,10 @@ const FloatingCTA = () => {
   const [activeHover, setActiveHover] = useState(null);
 
   const handleBookTime = () => {
-    // Add your booking link
-    window.open('YOUR_BOOKING_LINK', '_blank');
+    window.open('https://calendly.com/kevinobote49/15min', '_blank');
   };
 
   const handleDownloadCV = () => {
-    // Add your CV download link
     window.open('PATH_TO_YOUR_CV', '_blank');
   };
 

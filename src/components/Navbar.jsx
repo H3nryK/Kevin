@@ -37,6 +37,18 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
                 Home
               </a>
               <a
+                href='/volunteer'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Vounteering
+              </a>
+              <a
+                href='/projects'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Projects
+              </a>
+              <a
                 href='/experience'  
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
               >
@@ -46,18 +58,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            {/* Theme toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200 transform hover:scale-110"
-              aria-label="Toggle theme"
-            >
-              {isDarkMode ? 
-                <Sun size={20} className="hover:rotate-90 transition-transform duration-300" /> : 
-                <Moon size={20} className="hover:-rotate-90 transition-transform duration-300" />
-              }
-            </button>
-            
             {/* Mobile menu button */}
             <button
               className="md:hidden p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
@@ -84,6 +84,18 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
               >
                 Home
+              </a>
+              <a
+                href='/volunteer'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Vounteering
+              </a>
+              <a
+                href='/projects'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Projects
               </a>
               <a
                 href='/experience'  

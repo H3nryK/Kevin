@@ -4,8 +4,10 @@ import AppWrapper from './components/AppWrapper';
 import FloatingCTA from './components/CTA';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Main from './pages/main';
+import Main from './pages/main_page';
 import ExperiencePage from './pages/experince_page';
+import  ProjectsPage from './pages/projects_page';
+import Experience from './pages/exp_page';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +25,9 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/volunteer" element={<ExperiencePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/experience" element={<Experience />} />
           </Routes>
         </Router>
 
