@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, FileDown, ChevronUp, ChevronDown } from 'lucide-react';
+import { Calendar, FileDown } from 'lucide-react';
 
-const FloatingCTA = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [activeHover, setActiveHover] = useState(null);
+const CTASection = () => {
+  const [activeCard, setActiveCard] = useState(null);
 
   const handleBookTime = () => {
     window.open('https://calendly.com/kevinobote49/15min', '_blank');
@@ -14,127 +12,75 @@ const FloatingCTA = () => {
     window.open('/Kevin_Obote.pdf', '_blank');
   };
 
-  const items = [
+  const cards = [
     {
       id: 'booking',
-      title: 'Book a Meeting',
-      description: 'Schedule a call to discuss opportunities',
+      title: "Let's Talk",
+      subtitle: 'Schedule a Meeting',
+      description: 'Book a 15-minute call to discuss potential opportunities and collaborations',
       icon: Calendar,
       action: handleBookTime,
-      color: 'from-blue-500 to-indigo-600'
+      gradient: 'from-blue-500 to-indigo-600',
+      hoverGradient: 'from-blue-600 to-indigo-700'
     },
     {
       id: 'cv',
-      title: 'Download CV',
-      description: 'Get my detailed experience and skills',
+      title: 'My Experience',
+      subtitle: 'Download CV',
+      description: 'Get a detailed overview of my skills, experience, and achievements',
       icon: FileDown,
       action: handleDownloadCV,
-      color: 'from-emerald-500 to-teal-600'
+      gradient: 'from-emerald-500 to-teal-600',
+      hoverGradient: 'from-emerald-600 to-teal-700'
     }
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="fixed bottom-6 right-6 z-50"
-    >
-      <motion.div
-        animate={{ height: isExpanded ? 'auto' : '48px' }}
-        className="bg-gray-900/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-gray-800"
-      >
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="p-4 space-y-3"
+    <section className="relative py-16 bg-gray-900">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className="group relative"
+              onMouseEnter={() => setActiveCard(card.id)}
+              onMouseLeave={() => setActiveCard(null)}
+              onClick={card.action}
             >
-              {items.map((item) => (
-                <motion.div
-                  key={item.id}
-                  onHoverStart={() => setActiveHover(item.id)}
-                  onHoverEnd={() => setActiveHover(null)}
-                  onClick={item.action}
-                  className="relative cursor-pointer group"
-                >
-                  <motion.div
-                    className={`p-4 rounded-xl bg-gradient-to-r ${item.color} 
-                    transform transition-all duration-300 
-                    ${activeHover === item.id ? 'scale-[1.02]' : 'scale-100'}`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 bg-white/10 rounded-lg">
-                        <item.icon className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-medium">{item.title}</h3>
-                        <p className="text-sm text-white/80">{item.description}</p>
-                      </div>
-                    </div>
-                    
-                    {/* Particle effect on hover */}
-                    {activeHover === item.id && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="absolute inset-0 -z-10 overflow-hidden rounded-xl"
-                      >
-                        {[...Array(5)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            initial={{ 
-                              x: 0, 
-                              y: 0, 
-                              opacity: 0.8,
-                              scale: 1 
-                            }}
-                            animate={{ 
-                              x: Math.random() * 200 - 100,
-                              y: Math.random() * 200 - 100,
-                              opacity: 0,
-                              scale: 2
-                            }}
-                            transition={{ 
-                              duration: 1,
-                              repeat: Infinity,
-                              repeatType: "loop",
-                              delay: i * 0.2
-                            }}
-                            className="absolute w-2 h-2 bg-white/20 rounded-full"
-                            style={{
-                              left: `${Math.random() * 100}%`,
-                              top: `${Math.random() * 100}%`
-                            }}
-                          />
-                        ))}
-                      </motion.div>
-                    )}
-                  </motion.div>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <motion.button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full px-4 py-3 flex items-center justify-between text-white"
-        >
-          <span className="text-sm font-medium">
-            {isExpanded ? 'Close Menu' : 'Let\'s Connect'}
-          </span>
-          <motion.div
-            animate={{ rotate: isExpanded ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            {isExpanded ? <ChevronDown /> : <ChevronUp />}
-          </motion.div>
-        </motion.button>
-      </motion.div>
-    </motion.div>
+              <div className={`
+                absolute inset-0 bg-gradient-to-br ${activeCard === card.id ? card.hoverGradient : card.gradient}
+                rounded-2xl transform transition-all duration-300
+                ${activeCard === card.id ? 'scale-105 shadow-2xl' : 'scale-100 shadow-xl'}
+              `} />
+              
+              <div className="relative p-6 h-full">
+                <div className="bg-white/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <card.icon className="w-6 h-6 text-white" />
+                </div>
+                
+                <div className="space-y-2">
+                  <h3 className="text-white text-xs uppercase tracking-wider">{card.subtitle}</h3>
+                  <h2 className="text-white text-2xl font-bold">{card.title}</h2>
+                  <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+                </div>
+                
+                <div className={`
+                  mt-6 inline-flex items-center text-white text-sm font-medium
+                  transform transition-all duration-300
+                  ${activeCard === card.id ? 'translate-x-2' : 'translate-x-0'}
+                `}>
+                  Learn more
+                  <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default FloatingCTA;
+export default CTASection;
