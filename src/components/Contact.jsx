@@ -9,10 +9,9 @@ const ContactSection = () => {
   });
 
   const contactInfo = {
-    email: "contact@company.com",
-    phone: "+1 (555) 123-4567",
-    address: "123 Business Street, City, State 12345",
-    hours: "Mon-Fri: 9AM-5PM",
+    email: "kevinobote49@gmail.com",
+    phone: "+254 700 885748",
+    address: "Nairobi, Kenya",
   };
 
   const references = [
@@ -92,10 +91,6 @@ const ContactSection = () => {
                 <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
                   <MapPin size={20} />
                   <span>{contactInfo.address}</span>
-                </div>
-                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
-                  <Clock size={20} />
-                  <span>{contactInfo.hours}</span>
                 </div>
               </div>
             </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-import Profile from '../assets/profile.jpg';
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
@@ -34,7 +33,7 @@ const Hero = () => {
               </h1>
             </div>
             <p className="text-sm lg:text-xl text-gray-600 dark:text-gray-300 font-light">
-                CEO | Data Scientist | Software Engineer | Product Manager
+                Data Scientist | Software Engineer | Product Manager
             </p>
           </div>
 
@@ -54,19 +53,27 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex items-center gap-6 justify-center lg:justify-start pt-4">
             {[
-              { Icon: FaLinkedin, color: "hover:text-blue-600" },
-              { Icon: FaXTwitter, color: "hover:text-blue-400" },
-              { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white" },
-              { Icon: BiLogoGmail, color: "hover:text-red-500" },
-              { Icon: FiInstagram, color: "hover:text-red-300"},
-              { Icon: FaWhatsapp, color: "hover:text-green-600"}
+              { Icon: FaLinkedin, color: "hover:text-blue-600", href: "https://www.linkedin.com/in/kevinobote/" },
+              { Icon: FaXTwitter, color: "hover:text-blue-400", href: "https://x.com/KevinObote6" },
+              { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white", href: "https://github.com/Kevinobote" },
+              { Icon: BiLogoGmail, color: "hover:text-red-500", href: "mailto:kevinobote49@gmail.com" },
+              { Icon: FiInstagram, color: "hover:text-red-300", href: "https://www.instagram.com/kevin_obote_/" },
+              { Icon: FaWhatsapp, color: "hover:text-green-600", href: "https://wa.me/+254 700 885748" },
             ].map((social, index) => (
-              <social.Icon 
-                key={index}
-                className={`w-6 h-6 text-gray-600 dark:text-gray-400 ${social.color} cursor-pointer transition-all duration-300 hover:scale-110`}
-              />
+              <a 
+                key={index} 
+                href={social.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cursor-pointer transition-all duration-300 hover:scale-110"
+              >
+                <social.Icon
+                  className={`w-6 h-6 text-gray-600 dark:text-gray-400 ${social.color}`}
+                />
+              </a>
             ))}
           </div>
+
         </div>
 
         {/* Right Column - Image */}
@@ -79,7 +86,7 @@ const Hero = () => {
             {/* Main Image */}
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-300">
               <img
-                src={Profile}
+                src="https://media.licdn.com/dms/image/v2/D4D03AQF7QDk8WRkQyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721806959673?e=1741219200&v=beta&t=GEPHbrJsI6X_15NRsINK-1za2C1L9cFWbwaNzGJRDtE"
                 alt="John Executive - CEO & Strategic Innovation Leader"
                 className="w-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />

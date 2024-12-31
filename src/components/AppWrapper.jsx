@@ -56,13 +56,13 @@ const Footer = () => {
   }, []);
 
   const socialLinks = [
-    { icon: FaSquareGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaXTwitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: BiLogoGmail, href: 'mailto:contact@example.com', label: 'Email' },
-    { icon: FiInstagram, href: 'https://instagram.com/', label: 'Instagram' },
-    { icon: FaWhatsapp, href: 'https://wa.me.com/', label: 'Whatsapp' },
-  ];
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/kevinobote/", label: "LinkedIn" },
+    { icon: FaXTwitter, href: "https://x.com/KevinObote6", label: "Twitter" },
+    { icon: FaSquareGithub, href: "https://github.com/Kevinobote", label: "GitHub" },
+    { icon: BiLogoGmail, href: "mailto:kevinobote49@gmail.com", label: "Email" },
+    { icon: FiInstagram, href: "https://www.instagram.com/kevin_obote_/", label: "Instagram" },
+    { icon: FaWhatsapp, href: "https://wa.me/+254700885748", label: "Whatsapp" },
+  ];  
 
   const footerLinks = [
     { label: 'Experiences', href: '#experience' },
