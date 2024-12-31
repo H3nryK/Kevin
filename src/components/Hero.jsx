@@ -62,7 +62,7 @@ const Hero = () => {
               { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white", href: "https://github.com/Kevinobote" },
               { Icon: BiLogoGmail, color: "hover:text-red-500", href: "mailto:kevinobote49@gmail.com" },
               { Icon: FiInstagram, color: "hover:text-red-300", href: "https://www.instagram.com/kevin_obote_/" },
-              { Icon: FaWhatsapp, color: "hover:text-green-600", href: "https://wa.me/+254 700 885748" },
+              { Icon: FaWhatsapp, color: "hover:text-green-600", href: "https://wa.me/+254700885748" },
             ].map((social, index) => (
               <a 
                 key={index} 
@@ -99,10 +99,11 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-sm font-light">
-                  I’m a dynamic tech professional specializing in data science, machine learning, software engineering, ERP, and web development. 
-                  I excel at transforming data into actionable insights through predictive modeling, analysis, and visualizations. 
-                  With a passion for driving innovation, I also offer technology training, research, and user experience optimization. 
-                  Let’s work together to bring data-driven strategies and impactful software solutions to life.
+                  I am an explorer, dreamer, developer, thinker, and more. I am a multifaceted individual who finds joy in activities like swimming, 
+                  reading, stargazing, and immersing myself in nature.
+                  Fueling my pursuits is an insatiable curiosity for knowledge that drives me to explore new projects, guided by curiosity, and diligence. 
+                  I use this space to showcase my current and past work, detail upcoming plans, and make my presence felt in the world. 
+                  I’m constantly changing and evolving, so what you see here today might not be here tomorrow!
                   </p>
                 </div>
               </div>
