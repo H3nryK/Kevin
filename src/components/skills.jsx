@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Brush, Brain, Rocket, Users, LineChart } from 'lucide-react';
 
@@ -6,51 +5,60 @@ const SkillsSection = () => {
   const skills = [
     {
       icon: Code,
-      name: "Development",
+      name: "Product Management",
       level: 90,
-      description: "Full-stack development with modern technologies",
-      tags: ["React", "Node.js", "Python", "AWS"],
-      color: "blue"
+      color: "blue",
+      companies: [
+        { name: "Guild Code", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEL9zsVzL_9CA/company-logo_100_100/company-logo_100_100/0/1711213585807?e=1743638400&v=beta&t=qVGopot9Y2ezJh5ANCaERWf2sbzpqjlDo_rmQQTSq8U", alt: "Guild Code Logo" },
+        { name: "eProd", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHFtsDYGZroTg/company-logo_100_100/company-logo_100_100/0/1729694846208/eprod_solutions_limited_logo?e=1743638400&v=beta&t=uL8UrbbU1Ait9759lYp8hRenW8QGedTIZa6uF8VRXm0", alt: "eProd Logo" },
+        { name: "Alx", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQG6KNMnwz5Rug/company-logo_100_100/company-logo_100_100/0/1731438508591/alxafrica_logo?e=1743638400&v=beta&t=c7cPEK3MqIHnCrUUB-mwyCiKi5kgDEVxaB_C6uVByDY", alt: "ALx Logo" }
+      ]
     },
     {
       icon: Brain,
-      name: "AI & ML",
-      level: 85,
-      description: "Machine learning and artificial intelligence solutions",
-      tags: ["TensorFlow", "PyTorch", "NLP", "Computer Vision"],
-      color: "purple"
+      name: "Machine Learning",
+      level: 93,
+      color: "purple",
+      companies: [
+        { name: "Guild Code", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEL9zsVzL_9CA/company-logo_100_100/company-logo_100_100/0/1711213585807?e=1743638400&v=beta&t=qVGopot9Y2ezJh5ANCaERWf2sbzpqjlDo_rmQQTSq8U", alt: "Guild Code Logo" },
+        { name: "eProd", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHFtsDYGZroTg/company-logo_100_100/company-logo_100_100/0/1729694846208/eprod_solutions_limited_logo?e=1743638400&v=beta&t=uL8UrbbU1Ait9759lYp8hRenW8QGedTIZa6uF8VRXm0", alt: "eProd Logo" },
+        { name: "AfroCom", logo: "https://media.licdn.com/dms/image/v2/C560BAQE4eOGEdYluxw/company-logo_100_100/company-logo_100_100/0/1645640307620/afro_community_logo?e=1743638400&v=beta&t=R0DTleQOfe1ZfyUDYiSVWz18nsrFIEiTdmTw3QYtjHc", alt: "AfroCom Logo" },
+        { name: "EploreAI Academy", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHZ-oPtwLCzYQ/company-logo_100_100/company-logo_100_100/0/1685380849925/explore_ai_academy_logo?e=1743638400&v=beta&t=gffhuo5EGm-RzL_UGTjHdZcCvlH2gDNAQv6yoTfriO8", alt: "ExploreAI Academy Logo" },
+        { name: "Strathmore Uni", logo: "https://media.licdn.com/dms/image/v2/C560BAQGI7hayoKIULA/company-logo_100_100/company-logo_100_100/0/1631339833077?e=1743638400&v=beta&t=r5nipjT_uaARZr9hoAOXg4vJxTTtZLBCo0I42XCM3Uo", alt: "Strathmore Uni Logo" },
+        { name: "Machakos Uni", logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEcfcrvhdOgEQ/company-logo_100_100/company-logo_100_100/0/1631322329086?e=1743638400&v=beta&t=uAZq-nDqEUNVpz894ypfA19EGfJmtykuKyZRaPJugU4", alt: "MKSU Logo" }
+      ]
     },
     {
       icon: Brush,
-      name: "Design",
+      name: "Data Science",
       level: 88,
-      description: "UI/UX design and visual storytelling",
-      tags: ["Figma", "Adobe XD", "Responsive", "Motion"],
-      color: "pink"
+      color: "pink",
+      companies: [
+        { name: "iLabAfrica", logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHp9yj_NF-M7g/company-logo_100_100-alternative/company-logo_100_100-alternative/0/1630578801524/ilabafrica_logo?e=1743638400&v=beta&t=XDLlhZYsiVzsBeCnII1ys6br2cc4fcE4xrWB1h4dZ5I", alt: "iLabAfrica Logo" },
+        { name: "AfroCom", logo: "https://media.licdn.com/dms/image/v2/C560BAQE4eOGEdYluxw/company-logo_100_100/company-logo_100_100/0/1645640307620/afro_community_logo?e=1743638400&v=beta&t=R0DTleQOfe1ZfyUDYiSVWz18nsrFIEiTdmTw3QYtjHc", alt: "AfroCom Logo" },
+        { name: "EploreAI Academy", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHZ-oPtwLCzYQ/company-logo_100_100/company-logo_100_100/0/1685380849925/explore_ai_academy_logo?e=1743638400&v=beta&t=gffhuo5EGm-RzL_UGTjHdZcCvlH2gDNAQv6yoTfriO8", alt: "ExploreAI Academy Logo" }
+      ]
     },
     {
       icon: LineChart,
-      name: "Analytics",
+      name: "Software Testing",
       level: 92,
-      description: "Data analysis and business intelligence",
-      tags: ["Tableau", "Power BI", "SQL", "Data Mining"],
-      color: "green"
+      color: "green",
+      companies: [
+        { name: "Guild Code", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEL9zsVzL_9CA/company-logo_100_100/company-logo_100_100/0/1711213585807?e=1743638400&v=beta&t=qVGopot9Y2ezJh5ANCaERWf2sbzpqjlDo_rmQQTSq8U", alt: "Guild Code Logo" },
+        { name: "eProd", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHFtsDYGZroTg/company-logo_100_100/company-logo_100_100/0/1729694846208/eprod_solutions_limited_logo?e=1743638400&v=beta&t=uL8UrbbU1Ait9759lYp8hRenW8QGedTIZa6uF8VRXm0", alt: "eProd Logo" },
+        { name: "Roman Solutions", logo: "https://media.licdn.com/dms/image/v2/C4D0BAQHovRESH9fMVQ/company-logo_100_100/company-logo_100_100/0/1670665791318/romansolutions_logo?e=1743638400&v=beta&t=2UylWHyTF3bIJllmg70jI2cbInLYqwNhAI1sQwaa9_Q", alt: "Roman Solutions Logo" }
+      ]
     },
     {
       icon: Users,
-      name: "Team Leadership",
-      level: 87,
-      description: "Project management and team coordination",
-      tags: ["Agile", "Scrum", "Mentoring", "Strategy"],
-      color: "orange"
-    },
-    {
-      icon: Rocket,
-      name: "Innovation",
-      level: 89,
-      description: "Creative problem-solving and ideation",
-      tags: ["R&D", "Prototyping", "MVP", "Optimization"],
-      color: "red"
+      name: "Software Development",
+      level: 85,
+      color: "orange",
+      companies: [
+        { name: "Guild Code", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEL9zsVzL_9CA/company-logo_100_100/company-logo_100_100/0/1711213585807?e=1743638400&v=beta&t=qVGopot9Y2ezJh5ANCaERWf2sbzpqjlDo_rmQQTSq8U", alt: "Guild Code Logo" },
+        { name: "eProd", logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHFtsDYGZroTg/company-logo_100_100/company-logo_100_100/0/1729694846208/eprod_solutions_limited_logo?e=1743638400&v=beta&t=uL8UrbbU1Ait9759lYp8hRenW8QGedTIZa6uF8VRXm0", alt: "eProd Logo" }
+      ]
     }
   ];
 
@@ -121,8 +129,6 @@ const SkillsSection = () => {
                 <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
               </div>
 
-              <p className="text-gray-400 mb-4">{skill.description}</p>
-
               <div className="relative h-2 bg-gray-700 rounded-full mb-4">
                 <motion.div
                   initial={{ width: 0 }}
@@ -132,15 +138,25 @@ const SkillsSection = () => {
                 />
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                {skill.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-xs rounded-full bg-gray-700 text-gray-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              {/* New Company Logos Section */}
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <p className="text-sm text-gray-400 mb-2">Where I applied the skill:</p>
+                <div className="flex flex-wrap gap-4 items-center">
+                  {skill.companies.map((company) => (
+                    <motion.div
+                      key={company.name}
+                      whileHover={{ scale: 1.1 }}
+                      className="flex flex-col items-center"
+                    >
+                      <img
+                        src={company.logo}
+                        alt={company.alt}
+                        className="w-8 h-8 rounded-full bg-gray-700 p-1"
+                      />
+                      <span className="text-xs text-gray-400 mt-1">{company.name}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

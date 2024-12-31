@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
   const [scrolled, setScrolled] = useState(false);

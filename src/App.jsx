@@ -7,18 +7,14 @@ import Main from './pages/main';
 import ExperiencePage from './pages/experince_page';
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className={`min-h-screen bg-gray-900 text-white`}>
       <AppWrapper>
         <Navbar 
-          isDarkMode={isDarkMode}
-          toggleDarkMode={toggleDarkMode}
           isMenuOpen={isMenuOpen}
           toggleMenu={toggleMenu}
         />
