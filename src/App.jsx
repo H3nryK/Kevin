@@ -4,7 +4,7 @@ import AppWrapper from './components/AppWrapper';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Main from './pages/main';
-import ExperiencePage from './pages/experience_page';
+import ExperiencePage from './pages/experince_page';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,16 +31,18 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {['Experience', 'Testimonials', 'Projects', 'Contact'].map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="relative text-gray-300 hover:text-white transition-colors duration-200 group"
+                href='/'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
               >
-                <span>{item}</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
+                Home
               </a>
-            ))}
+              <a
+                href='/experience'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Experience
+              </a>
           </div>
 
           {/* Right side buttons */}
@@ -77,16 +80,18 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
           ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
         `}>
           <div className="px-4 py-3 space-y-3">
-            {['Experience', 'Testimonials', 'Projects', 'Contact'].map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                href='/'  
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-                onClick={toggleMenu}
               >
-                {item}
+                Home
               </a>
-            ))}
+              <a
+                href='/experience'  
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+              >
+                Experience
+              </a>
           </div>
         </div>
       </div>
