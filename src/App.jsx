@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import AppWrapper from './components/AppWrapper';
+import FloatingCTA from './components/CTA';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Main from './pages/main';
@@ -25,6 +26,8 @@ const App = () => {
             <Route path="/experience" element={<ExperiencePage />} />
           </Routes>
         </Router>
+
+        <FloatingCTA />
 
       </AppWrapper>
     </div>
