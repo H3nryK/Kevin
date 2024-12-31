@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, User, Building, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Phone, MapPin, User, Building } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +32,15 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
+    console.log(formData);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
   };
 
   return (
@@ -46,6 +55,9 @@ const ContactSection = () => {
                 <label className="block text-sm font-medium mb-2 dark:text-gray-200">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
                   required
                 />
@@ -54,6 +66,9 @@ const ContactSection = () => {
                 <label className="block text-sm font-medium mb-2 dark:text-gray-200">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
                   required
                 />
@@ -61,6 +76,9 @@ const ContactSection = () => {
               <div>
                 <label className="block text-sm font-medium mb-2 dark:text-gray-200">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-2 border rounded-lg h-32 resize-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
                   required
                 />

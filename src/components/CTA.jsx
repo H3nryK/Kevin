@@ -11,7 +11,7 @@ const FloatingCTA = () => {
   };
 
   const handleDownloadCV = () => {
-    window.open('PATH_TO_YOUR_CV', '_blank');
+    window.open('/Kevin_Obote.pdf', '_blank');
   };
 
   const items = [

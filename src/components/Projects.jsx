@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Globe } from 'lucide-react';
 
+import PropTypes from 'prop-types';
+
 const projects = [
   {
     id: 1,
@@ -86,6 +88,16 @@ const ProjectCard = ({ project }) => {
       </a>
     </motion.div>
   );
+};
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    icon: PropTypes.elementType.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const Projects = () => {

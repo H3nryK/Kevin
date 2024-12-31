@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, Clock, ThumbsUp, Share2 } from 'lucide-react';
 
@@ -242,7 +242,7 @@ const TestimonialCarousel = () => {
               transition={{ delay: 0.4 }}
               className="text-gray-300 text-lg leading-relaxed relative z-10 mb-6"
             >
-              "{testimonials[currentIndex].content}"
+              &quot;{testimonials[currentIndex].content}&quot;
             </motion.p>
 
             <motion.div

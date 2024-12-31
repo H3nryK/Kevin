@@ -4,8 +4,9 @@ import { GiArchiveResearch } from "react-icons/gi";
 import { FaDatabase, FaUserInjured } from "react-icons/fa";
 import { AiFillProduct } from "react-icons/ai";
 import { MdEngineering } from "react-icons/md";
-import { GiWheelbarrow, GiSpiderWeb } from "react-icons/gi";
-import { FaMaskFace } from "react-icons/fa6";
+import { GiWheelbarrow } from "react-icons/gi";
+
+import PropTypes from 'prop-types';
 
 const experiences = [
   {
@@ -164,6 +165,18 @@ const work_experiences = [
 
 const ExperienceCard = ({ experience }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  ExperienceCard.propTypes = {
+    experience: PropTypes.shape({
+      icon: PropTypes.elementType.isRequired,
+      role: PropTypes.string.isRequired,
+      company: PropTypes.string.isRequired,
+      duration: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      achievements: PropTypes.arrayOf(PropTypes.string).isRequired,
+      skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired,
+  };
 
   return (
     <div className="relative">

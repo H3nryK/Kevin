@@ -93,11 +93,25 @@ const Footer = () => {
                   Home
                 </a>
                 <a 
+                  href="/volunteer"
+                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Volunteering
+                </a>
+                <a 
                   href="/experience"
                   className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   Experience
+                </a>
+                <a 
+                  href="/projects"
+                  className="group flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  Projects
                 </a>
               </li>
             </ul>
@@ -126,7 +140,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
           <p>© {new Date().getFullYear()} Kevin Obote. All rights reserved.</p>
-          <p className='text-xs mt-4'>Built by <a href='https://guild-code.com/' target='_blank' rel='noopener noreferrer'>Guild Code</a></p>
+          <p className='text-xs mt-4'>Powered by <a href='https://guild-code.com/' target='_blank' rel='noopener noreferrer'>Guild Code</a></p>
         </div>
       </div>
     </footer>
@@ -144,6 +158,12 @@ const AppWrapper = ({ children }) => {
       <Footer />
     </>
   );
+};
+
+import PropTypes from 'prop-types';
+
+AppWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default AppWrapper;

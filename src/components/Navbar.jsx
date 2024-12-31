@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
+import PropTypes from 'prop-types';
+
+const Navbar = ({ isMenuOpen, toggleMenu }) => {
   const [scrolled, setScrolled] = useState(false);
 
   // Handle scroll effect
@@ -108,6 +110,11 @@ const Navbar = ({ isDarkMode, toggleDarkMode, isMenuOpen, toggleMenu }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  isMenuOpen: PropTypes.bool.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default Navbar;

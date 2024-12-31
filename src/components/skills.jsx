@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, Brush, Brain, Rocket, Users, LineChart } from 'lucide-react';
+import { Code, Brush, Brain, Users, LineChart } from 'lucide-react';
 
 const SkillsSection = () => {
   const skills = [
