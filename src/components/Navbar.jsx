@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import PropTypes from 'prop-types';
-
-const Navbar = ({ isMenuOpen, toggleMenu }) => {
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Handle scroll effect
@@ -14,6 +13,33 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when screen size changes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const nav = document.getElementById('mobile-menu');
+      const button = document.getElementById('menu-button');
+      if (isMenuOpen && nav && !nav.contains(event.target) && !button.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
 
   return (
     <nav className={`
@@ -35,89 +61,62 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
+            {['Home', 'Volunteer', 'Projects', 'Experience'].map((item) => (
               <a
-                href='/'  
+                key={item}
+                href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
               >
-                Home
+                {item}
               </a>
-              <a
-                href='/volunteer'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Vounteering
-              </a>
-              <a
-                href='/projects'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Projects
-              </a>
-              <a
-                href='/experience'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Experience
-              </a>
+            ))}
           </div>
 
-          {/* Right side buttons */}
-          <div className="flex items-center space-x-4">
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? 
-                <X size={24} className="transform rotate-0 transition-transform duration-300" /> : 
-                <Menu size={24} className="transform rotate-0 transition-transform duration-300" />
-              }
-            </button>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            id="menu-button"
+            className="md:hidden p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            {isMenuOpen ? 
+              <X size={24} className="transform rotate-0 transition-transform duration-300" /> : 
+              <Menu size={24} className="transform rotate-0 transition-transform duration-300" />
+            }
+          </button>
         </div>
 
         {/* Mobile menu */}
-        <div className={`
-          md:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-sm
-          transform transition-all duration-300 ease-in-out
-          ${isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
-        `}>
-          <div className="px-4 py-3 space-y-3">
+        <div
+          id="mobile-menu" 
+          className={`
+            md:hidden absolute top-full left-0 w-full bg-gray-900/95 shadow-lg 
+            transform transition-all duration-300 ease-in-out origin-top
+            ${isMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}
+          `}
+        >
+          <div 
+            className={`
+              px-4 py-2 space-y-1 transform transition-all duration-300 delay-100
+              ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}
+            `}
+          >
+            {['Home', 'Volunteer', 'Projects', 'Experience'].map((item) => (
               <a
-                href='/'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+                key={item}
+                href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
+                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-4 py-3 rounded-lg transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {item}
               </a>
-              <a
-                href='/volunteer'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Vounteering
-              </a>
-              <a
-                href='/projects'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Projects
-              </a>
-              <a
-                href='/experience'  
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                Experience
-              </a>
+            ))}
           </div>
         </div>
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  isMenuOpen: PropTypes.bool.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default Navbar;

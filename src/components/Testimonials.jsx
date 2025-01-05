@@ -117,9 +117,7 @@ const TestimonialCarousel = () => {
   };
 
   const swipeConfidenceThreshold = 5000;
-  const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
-  };
+  const swipePower = (offset, velocity) => Math.abs(offset) * velocity;
 
   const paginate = (newDirection) => {
     setDirection(newDirection);
@@ -139,10 +137,10 @@ const TestimonialCarousel = () => {
   }, [isAutoplayPaused]);
 
   return (
-    <div className="py-12 px-4 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
-      <div className="max-w-4xl mx-auto relative h-[400px]">
-        {/* Navigation buttons positioned outside the card */}
-        <div className="absolute z-50 inset-0 flex items-center justify-between pointer-events-none">
+    <div className="py-8 md:py-12 px-4 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+      <div className="max-w-4xl mx-auto relative min-h-[450px] md:h-[400px]">
+        {/* Navigation buttons - hidden on mobile, visible on larger screens */}
+        <div className="hidden md:flex absolute z-50 inset-0 items-center justify-between pointer-events-none">
           <div className="w-12 pointer-events-auto">
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -184,21 +182,21 @@ const TestimonialCarousel = () => {
                 paginate(-1);
               }
             }}
-            className="absolute w-full bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700"
+            className="absolute w-full bg-gray-800 p-4 md:p-8 rounded-xl shadow-2xl border border-gray-700"
           >
-            <Quote className="absolute top-4 right-4 text-gray-700" size={40} />
+            <Quote className="absolute top-4 right-4 text-gray-700 hidden md:block" size={40} />
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center gap-6 mb-6"
+              className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-4 md:mb-6"
             >
-              <div className="relative">
+              <div className="relative mx-auto md:mx-0">
                 <img 
                   src={testimonials[currentIndex].image} 
                   alt={testimonials[currentIndex].author}
-                  className="w-20 h-20 rounded-full object-cover border-2 border-blue-500"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-blue-500"
                 />
                 <div className="absolute -bottom-2 -right-2 bg-blue-500 rounded-full p-1">
                   <motion.div 
@@ -209,14 +207,14 @@ const TestimonialCarousel = () => {
                   </motion.div>
                 </div>
               </div>
-              <div>
-                <div className="font-bold text-xl text-white mb-1">
+              <div className="text-center md:text-left">
+                <div className="font-bold text-lg md:text-xl text-white mb-1">
                   {testimonials[currentIndex].author}
                 </div>
-                <div className="text-blue-400 font-medium">
+                <div className="text-blue-400 font-medium text-sm md:text-base">
                   {testimonials[currentIndex].role}
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-400 mt-1">
+                <div className="flex items-center gap-2 text-xs md:text-sm text-gray-400 mt-1 justify-center md:justify-start">
                   <Clock size={14} />
                   {testimonials[currentIndex].date}
                 </div>
@@ -227,32 +225,34 @@ const TestimonialCarousel = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 mb-6"
+              className="flex items-center gap-2 mb-4 md:mb-6 justify-center md:justify-start"
             >
               <div className="flex">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="text-yellow-400" size={18} fill="currentColor" />
+                  <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
                 ))}
               </div>
             </motion.div>
             
-            <motion.p 
+            <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-gray-300 text-lg leading-relaxed relative z-10 mb-6"
+              className="relative z-10 mb-4 md:mb-6"
             >
-              &quot;{testimonials[currentIndex].content}&quot;
-            </motion.p>
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-h-[200px] md:max-h-none overflow-y-auto">
+                &quot;{testimonials[currentIndex].content}&quot;
+              </p>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-wrap gap-2"
+              className="flex flex-wrap gap-2 justify-center md:justify-start"
             >
               {testimonials[currentIndex].tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-gray-700 text-blue-400 rounded-full text-sm">
+                <span key={tag} className="px-3 py-1 bg-gray-700 text-blue-400 rounded-full text-xs md:text-sm">
                   #{tag}
                 </span>
               ))}
