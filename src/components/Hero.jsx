@@ -4,21 +4,45 @@ import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter, FaSquareGithub } from "react-icons/fa6";
 import { BiLogoGmail } from "react-icons/bi";
 import { FiInstagram } from "react-icons/fi";
+import { useTheme } from '../contexts/theme-context';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isDarkTheme] = useTheme();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+    // Theme-specific styles
+  const themeStyles = {
+    background: isDarkTheme 
+      ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
+      : "bg-gradient-to-br from-white via-gray-50 to-blue-50",
+    heading: isDarkTheme
+      ? "from-blue-400 to-purple-400"
+      : "from-blue-600 to-purple-600",
+    text: isDarkTheme
+      ? "text-gray-300"
+      : "text-gray-600",
+    border: isDarkTheme
+      ? "border-gray-600"
+      : "border-gray-300",
+    hoverBg: isDarkTheme
+      ? "hover:bg-gray-800/50"
+      : "hover:bg-white/50",
+    iconColor: isDarkTheme
+      ? "text-gray-400"
+      : "text-gray-600"
+  };
+
   return (
-    <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-24 pb-16 px-4">
+    <section className={`min-h-screen relative overflow-hidden ${themeStyles.background} pt-24 pb-16 px-4`}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply dark:mix-blend-soft-light blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-purple-200 dark:bg-purple-900/20 rounded-full mix-blend-multiply dark:mix-blend-soft-light blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-200 dark:bg-pink-900/20 rounded-full mix-blend-multiply dark:mix-blend-soft-light blur-3xl animate-pulse delay-1000"></div>
+        <div className={`absolute top-20 left-10 w-64 h-64 ${isDarkTheme ? 'bg-blue-900/20' : 'bg-blue-200'} rounded-full mix-blend-multiply blur-3xl animate-pulse`}></div>
+        <div className={`absolute bottom-20 right-10 w-64 h-64 ${isDarkTheme ? 'bg-purple-900/20' : 'bg-purple-200'} rounded-full mix-blend-multiply blur-3xl animate-pulse delay-700`}></div>
+        <div className={`absolute top-1/2 left-1/2 w-96 h-96 ${isDarkTheme ? 'bg-pink-900/20' : 'bg-pink-200'} rounded-full mix-blend-multiply blur-3xl animate-pulse delay-1000`}></div>
       </div>
 
       {/* Main Content */}
@@ -28,11 +52,11 @@ const Hero = () => {
           {/* Name and Title */}
           <div className="space-y-4">
             <div className="inline-block">
-              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <h1 className={`text-5xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r ${themeStyles.heading} bg-clip-text text-transparent`}>
                 Kevin Obote
               </h1>
             </div>
-            <p className="text-sm lg:text-xl text-gray-600 dark:text-gray-300 font-light">
+            <p className={`text-sm lg:text-xl ${themeStyles.text} font-light`}>
                 Data Scientist | Software Engineer | Product Manager
             </p>
           </div>
@@ -40,7 +64,7 @@ const Hero = () => {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a href="/projects" className="group">
-              <button className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 ease-out transform hover:-translate-y-1">
+              <button className={`group bg-gradient-to-r ${themeStyles.heading} text-white px-8 py-4 rounded-xl hover:shadow-lg transition-all duration-300 ease-out transform hover:-translate-y-1`}>
                 <span className="flex items-center justify-center gap-2">
                   View Projects 
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -48,7 +72,7 @@ const Hero = () => {
               </button>
             </a>
             <a href="#contact" className="group">
-              <button className="px-8 py-4 rounded-xl border border-gray-300 dark:border-gray-600 hover:bg-white/50 dark:hover:bg-gray-800/50 backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <button className={`px-8 py-4 rounded-xl border ${themeStyles.border} ${themeStyles.text} ${themeStyles.hoverBg} backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}>
                 Contact Me
               </button>
             </a>
@@ -59,7 +83,7 @@ const Hero = () => {
             {[
               { Icon: FaLinkedin, color: "hover:text-blue-600", href: "https://www.linkedin.com/in/kevinobote/" },
               { Icon: FaXTwitter, color: "hover:text-blue-400", href: "https://x.com/KevinObote6" },
-              { Icon: FaSquareGithub, color: "hover:text-gray-900 dark:hover:text-white", href: "https://github.com/Kevinobote" },
+              { Icon: FaSquareGithub, color: isDarkTheme ? "hover:text-white" : "hover:text-gray-900", href: "https://github.com/Kevinobote" },
               { Icon: BiLogoGmail, color: "hover:text-red-500", href: "mailto:kevinobote49@gmail.com" },
               { Icon: FiInstagram, color: "hover:text-red-300", href: "https://www.instagram.com/kevin_obote_/" },
               { Icon: FaWhatsapp, color: "hover:text-green-600", href: "https://wa.me/+254700885748" },
@@ -72,7 +96,7 @@ const Hero = () => {
                 className="cursor-pointer transition-all duration-300 hover:scale-110"
               >
                 <social.Icon
-                  className={`w-6 h-6 text-gray-600 dark:text-gray-400 ${social.color}`}
+                  className={`w-6 h-6 ${themeStyles.iconColor} ${social.color}`}
                 />
               </a>
             ))}
