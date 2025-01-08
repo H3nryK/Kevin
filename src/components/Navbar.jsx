@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-<<<<<<< HEAD
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-=======
-import PropTypes from 'prop-types';
-
-const Navbar = ({ isMenuOpen, toggleMenu }) => {
->>>>>>> 1462c6445793e5426398226fa9386228e813a435
   const [scrolled, setScrolled] = useState(false);
 
   // Handle scroll effect
@@ -20,7 +14,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-<<<<<<< HEAD
   // Close mobile menu when screen size changes to desktop
   useEffect(() => {
     const handleResize = () => {
@@ -47,20 +40,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     }
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMenuOpen]);
-=======
-  const menuItems = [
-    { href: '/', text: 'Home' },
-    { href: '/volunteer', text: 'Vounteering' },
-    { href: '/projects', text: 'Projects' },
-    { href: '/experience', text: 'Experience' },
-    { 
-      href: '/Kevin_Obote.pdf', 
-      text: 'Resume',
-      target: '_blank',
-      rel: 'noopener noreferrer'
-    }
-  ];
->>>>>>> 1462c6445793e5426398226fa9386228e813a435
 
   return (
     <nav className={`
@@ -82,7 +61,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-<<<<<<< HEAD
             {['Home', 'Volunteer', 'Projects', 'Experience'].map((item) => (
               <a
                 key={item}
@@ -90,17 +68,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
               >
                 {item}
-=======
-            {menuItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                target={item.target}
-                rel={item.rel}
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                {item.text}
->>>>>>> 1462c6445793e5426398226fa9386228e813a435
               </a>
             ))}
           </div>
@@ -121,7 +88,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         </div>
 
         {/* Mobile menu */}
-<<<<<<< HEAD
         <div
           id="mobile-menu" 
           className={`
@@ -144,30 +110,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}
-=======
-        <div 
-          className={`
-            md:hidden fixed top-[${scrolled ? '3.5rem' : '4.5rem'}] left-0 w-full bg-gray-900/95 backdrop-blur-sm
-            transform transition-all duration-300 ease-in-out
-            ${isMenuOpen ? 'translate-y-0 opacity-100 visible' : 'translate-y-[-100%] opacity-0 invisible'}
-          `}
-          style={{
-            maxHeight: 'calc(100vh - 4rem)',
-            overflowY: 'auto'
-          }}
-        >
-          <div className="px-4 py-3 space-y-3">
-            {menuItems.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                target={item.target}
-                rel={item.rel}
-                onClick={toggleMenu}
-                className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
-              >
-                {item.text}
->>>>>>> 1462c6445793e5426398226fa9386228e813a435
               </a>
             ))}
           </div>
@@ -177,13 +119,4 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-Navbar.propTypes = {
-  isMenuOpen: PropTypes.bool.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
-};
-
-export default Navbar;
->>>>>>> 1462c6445793e5426398226fa9386228e813a435
