@@ -180,23 +180,23 @@ const ExperienceCard = ({ experience }) => {
 
   return (
     <div className="relative">
-      <div className="absolute left-0 w-0.5 h-full bg-gray-200 dark:bg-gray-600" />
+      <div className="absolute left-0 w-0.5 h-full bg-gray-200 dark:bg-gray-700" />
       <div className="ml-6">
         <div 
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8 hover:shadow-xl transition-all cursor-pointer"
+          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8 hover:shadow-xl transition-all cursor-pointer border border-gray-100 dark:border-gray-700"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div className="absolute -left-3 p-2 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600">
-            <experience.icon className={`text-gray-600 dark:text-gray-400`} size={16} />
+          <div className="absolute -left-3 p-2 rounded-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
+            <experience.icon className="text-gray-600 dark:text-gray-400" size={16} />
           </div>
           
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-bold group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {experience.role}
               </h3>
               <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mt-1">
-                <span className="font-medium hover:text-blue-600 cursor-pointer flex items-center gap-1">
+                <span className="font-medium hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer flex items-center gap-1">
                   {experience.company} <ArrowUpRight size={14} />
                 </span>
                 <span>•</span>
@@ -206,7 +206,9 @@ const ExperienceCard = ({ experience }) => {
                 </span>
               </div>
             </div>
-            {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            <div className="text-gray-600 dark:text-gray-400">
+              {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            </div>
           </div>
 
           {isExpanded && (
@@ -214,7 +216,7 @@ const ExperienceCard = ({ experience }) => {
               <p className="text-gray-600 dark:text-gray-300">{experience.description}</p>
               
               <div>
-                <h4 className="font-semibold mb-2">Key Achievements:</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Key Achievements:</h4>
                 <ul className="space-y-2">
                   {experience.achievements.map((achievement, i) => (
                     <li
@@ -222,7 +224,7 @@ const ExperienceCard = ({ experience }) => {
                       className="flex items-center gap-2 text-gray-600 dark:text-gray-300 animate-slideInRight"
                       style={{ animationDelay: `${i * 100}ms` }}
                     >
-                      <span className={`w-1.5 h-1.5 rounded-full bg-gray-600`} />
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-600 dark:bg-gray-400" />
                       {achievement}
                     </li>
                   ))}
@@ -233,8 +235,9 @@ const ExperienceCard = ({ experience }) => {
                 {experience.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className={`px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-900 
-                    text-gray-600 dark:text-gray-400 animate-fadeIn`}
+                    className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 
+                    text-gray-600 dark:text-gray-300 animate-fadeIn hover:bg-gray-200 dark:hover:bg-gray-600 
+                    transition-colors duration-200"
                     style={{ animationDelay: `${i * 100}ms` }}
                   >
                     {skill}
@@ -251,9 +254,9 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   return (
-    <section id='experience' className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+    <section id='experience' className="py-16 px-4 bg-white dark:bg-gray-900">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp">
+        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
           Trainer Experience
         </h2>
         <div className="relative">
@@ -263,7 +266,7 @@ const Experience = () => {
         </div>
       </div>
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp">
+        <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
           Work Experience
         </h2>
         <div className="relative">

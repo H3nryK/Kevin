@@ -7,7 +7,6 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isDarkTheme, toggleTheme] = useTheme();
   
-    // Handle scroll effect
     useEffect(() => {
       const handleScroll = () => {
         setScrolled(window.scrollY > 20);
@@ -16,7 +15,6 @@ const Navbar = () => {
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
   
-    // Close mobile menu when screen size changes to desktop
     useEffect(() => {
       const handleResize = () => {
         if (window.innerWidth >= 768) {
@@ -27,7 +25,6 @@ const Navbar = () => {
       return () => window.removeEventListener('resize', handleResize);
     }, []);
   
-    // Close mobile menu when clicking outside
     useEffect(() => {
       const handleClickOutside = (event) => {
         const nav = document.getElementById('mobile-menu');
@@ -46,9 +43,11 @@ const Navbar = () => {
     return (
       <nav className={`
         fixed w-full top-0 z-50 transition-all duration-300 ease-in-out
-        ${scrolled ? 'py-2 bg-gray-900/95 shadow-lg' : 'py-4 bg-gray-900/80'}
-        ${isDarkTheme ? 'dark' : ''}
-        backdrop-blur-sm border-b border-gray-800
+        ${scrolled 
+          ? 'py-2 dark:bg-gray-900/95 bg-white/95 shadow-lg dark:shadow-gray-900/50' 
+          : 'py-4 dark:bg-gray-900/80 bg-white/80'
+        }
+        backdrop-blur-sm dark:border-gray-800 border-gray-200
       `}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -68,7 +67,12 @@ const Navbar = () => {
                 <a
                   key={item}
                   href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
-                  className="text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-lg transition-all duration-200"
+                  className="
+                    dark:text-gray-300 text-gray-700 
+                    dark:hover:text-white hover:text-gray-900 
+                    dark:hover:bg-gray-800 hover:bg-gray-100 
+                    px-3 py-2 rounded-lg transition-all duration-200
+                  "
                 >
                   {item}
                 </a>
@@ -77,7 +81,15 @@ const Navbar = () => {
               {/* Theme Toggle - Desktop */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
+                className="
+                  p-2 rounded-lg 
+                  dark:bg-gray-800 bg-gray-100
+                  dark:hover:bg-gray-700 hover:bg-gray-200
+                  dark:text-gray-300 text-gray-700
+                  dark:hover:text-white hover:text-gray-900
+                  transition-all duration-200
+                  ring-1 ring-gray-200 dark:ring-gray-700
+                "
                 aria-label="Toggle theme"
               >
                 {isDarkTheme ? 
@@ -92,7 +104,15 @@ const Navbar = () => {
               {/* Theme Toggle - Mobile */}
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
+                className="
+                  p-2 rounded-lg 
+                  dark:bg-gray-800 bg-gray-100
+                  dark:hover:bg-gray-700 hover:bg-gray-200
+                  dark:text-gray-300 text-gray-700
+                  dark:hover:text-white hover:text-gray-900
+                  transition-all duration-200
+                  ring-1 ring-gray-200 dark:ring-gray-700
+                "
                 aria-label="Toggle theme"
               >
                 {isDarkTheme ? 
@@ -104,7 +124,15 @@ const Navbar = () => {
               {/* Mobile menu button */}
               <button
                 id="menu-button"
-                className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition-all duration-200"
+                className="
+                  p-2 rounded-lg 
+                  dark:bg-gray-800 bg-gray-100
+                  dark:hover:bg-gray-700 hover:bg-gray-200
+                  dark:text-gray-300 text-gray-700
+                  dark:hover:text-white hover:text-gray-900
+                  transition-all duration-200
+                  ring-1 ring-gray-200 dark:ring-gray-700
+                "
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
                 aria-expanded={isMenuOpen}
@@ -121,9 +149,12 @@ const Navbar = () => {
           <div
             id="mobile-menu" 
             className={`
-              md:hidden absolute top-full left-0 w-full bg-gray-900/95 shadow-lg 
+              md:hidden absolute top-full left-0 w-full
+              dark:bg-gray-900/95 bg-white/95 
+              shadow-lg dark:shadow-gray-900/50
               transform transition-all duration-300 ease-in-out origin-top
               ${isMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}
+              border-t dark:border-gray-800 border-gray-200
             `}
           >
             <div 
@@ -136,7 +167,12 @@ const Navbar = () => {
                 <a
                   key={item}
                   href={`/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
-                  className="block text-gray-300 hover:text-white hover:bg-gray-800 px-4 py-3 rounded-lg transition-all duration-200"
+                  className="
+                    block dark:text-gray-300 text-gray-700 
+                    dark:hover:text-white hover:text-gray-900 
+                    dark:hover:bg-gray-800 hover:bg-gray-100 
+                    px-4 py-3 rounded-lg transition-all duration-200
+                  "
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}

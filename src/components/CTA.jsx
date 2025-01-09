@@ -36,7 +36,7 @@ const CTASection = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-gray-900">
+    <section className="relative py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {cards.map((card) => (
@@ -54,18 +54,18 @@ const CTASection = () => {
               `} />
               
               <div className="relative p-6 h-full">
-                <div className="bg-white/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                <div className="bg-white/10 dark:bg-gray-800/20 w-12 h-12 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm">
                   <card.icon className="w-6 h-6 text-white" />
                 </div>
                 
                 <div className="space-y-2">
-                  <h3 className="text-white text-xs uppercase tracking-wider">{card.subtitle}</h3>
-                  <h2 className="text-white text-2xl font-bold">{card.title}</h2>
-                  <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+                  <h3 className="text-white/90 dark:text-white text-xs uppercase tracking-wider">{card.subtitle}</h3>
+                  <h2 className="text-white dark:text-white text-2xl font-bold">{card.title}</h2>
+                  <p className="text-white/80 dark:text-white/80 text-sm leading-relaxed">{card.description}</p>
                 </div>
                 
                 <div className={`
-                  mt-6 inline-flex items-center text-white text-sm font-medium
+                  mt-6 inline-flex items-center text-white dark:text-white text-sm font-medium
                   transform transition-all duration-300
                   ${activeCard === card.id ? 'translate-x-2' : 'translate-x-0'}
                 `}>

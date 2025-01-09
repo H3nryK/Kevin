@@ -95,16 +95,16 @@ const SkillsSection = () => {
   };
 
   return (
-    <div className="bg-gray-900 py-16 px-4">
+    <div className="bg-white dark:bg-gray-900 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">My Expertise</h2>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300 mb-4">My Expertise</h2>
         </motion.div>
-
+  
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -116,7 +116,7 @@ const SkillsSection = () => {
               key={skill.name}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="relative bg-gray-800 rounded-xl p-6 border border-gray-700"
+              className="relative bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all"
             >
               <div className={`absolute top-0 right-0 rounded-bl-xl rounded-tr-xl px-3 py-1 text-sm font-medium ${getColorClass(skill.color)}`}>
                 {skill.level}%
@@ -126,10 +126,10 @@ const SkillsSection = () => {
                 <div className={`p-3 rounded-lg ${getColorClass(skill.color)}`}>
                   <skill.icon size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
               </div>
-
-              <div className="relative h-2 bg-gray-700 rounded-full mb-4">
+  
+              <div className="relative h-2 bg-gray-100 dark:bg-gray-700 rounded-full mb-4">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${skill.level}%` }}
@@ -137,10 +137,9 @@ const SkillsSection = () => {
                   className={`absolute h-full rounded-full ${getColorClass(skill.color)}`}
                 />
               </div>
-
-              {/* New Company Logos Section */}
-              <div className="mt-4 pt-4 border-t border-gray-700">
-                <p className="text-sm text-gray-400 mb-2">Where I applied the skill:</p>
+  
+              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Where I applied the skill:</p>
                 <div className="flex flex-wrap gap-4 items-center">
                   {skill.companies.map((company) => (
                     <motion.a
@@ -154,9 +153,9 @@ const SkillsSection = () => {
                       <img
                         src={company.logo}
                         alt={company.alt}
-                        className="w-8 h-8 rounded-full bg-gray-700 p-1 transition-transform group-hover:scale-105"
+                        className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 p-1 transition-transform group-hover:scale-105"
                       />
-                      <span className="text-xs text-gray-400 mt-1 group-hover:text-white transition-colors">
+                      <span className="text-xs text-gray-600 dark:text-gray-400 mt-1 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                         {company.name}
                       </span>
                     </motion.a>
