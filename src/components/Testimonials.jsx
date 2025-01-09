@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight, Clock, ThumbsUp, Share2 } from 'lucide-react';
+import { ImQuotesRight } from "react-icons/im";
 
 const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -137,7 +138,7 @@ const TestimonialCarousel = () => {
   }, [isAutoplayPaused]);
 
   return (
-    <div className="py-8 md:py-12 px-4 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
+    <div className="py-8 md:py-12 px-4 bg-gradient-to-b from-gray-300 to-gray-50 dark:from-gray-900 dark:to-gray-700 overflow-hidden">
       <div className="max-w-4xl mx-auto relative min-h-[450px] md:h-[400px]">
         {/* Navigation buttons - hidden on mobile, visible on larger screens */}
         <div className="hidden md:flex absolute z-50 inset-0 items-center justify-between pointer-events-none">
@@ -145,20 +146,20 @@ const TestimonialCarousel = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-gray-800/50 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
+              className="p-3 bg-gray-500 dark:bg-gray-800/50 rounded-full shadow-lg border border-gray-800 dark:border-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-700 transition-colors"
               onClick={() => paginate(-1)}
             >
-              <ChevronLeft className="text-gray-300" size={20} />
+              <ChevronLeft className="text-gray-800 dark:text-gray-300" size={20} />
             </motion.button>
           </div>
           <div className="w-12 pointer-events-auto text-right">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-3 bg-gray-800/50 rounded-full shadow-lg border border-gray-700 hover:border-gray-600 hover:bg-gray-700 transition-colors"
+              className="p-3  bg-gray-500 dark:bg-gray-800/50 rounded-full shadow-lg border border-gray-800 dark:border-gray-300 dark:hover:border-gray-600 dark:hover:bg-gray-700 transition-colors"
               onClick={() => paginate(1)}
             >
-              <ChevronRight className="text-gray-300" size={20} />
+              <ChevronRight className="text-gray-800 dark:text-gray-300" size={20} />
             </motion.button>
           </div>
         </div>
@@ -182,9 +183,9 @@ const TestimonialCarousel = () => {
                 paginate(-1);
               }
             }}
-            className="absolute w-full bg-gray-800 p-4 md:p-8 rounded-xl shadow-2xl border border-gray-700"
+            className="absolute w-full bg-gray-300 dark:bg-gray-800 p-4 md:p-8 rounded-xl shadow-2xl border border-white dark:border-gray-700"
           >
-            <Quote className="absolute top-4 right-4 text-gray-700 hidden md:block" size={40} />
+            <ImQuotesRight className="absolute top-4 right-4 text-gray-700/40 dark:text-gray-200/40 hidden md:block" size={120} />
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -196,9 +197,9 @@ const TestimonialCarousel = () => {
                 <img 
                   src={testimonials[currentIndex].image} 
                   alt={testimonials[currentIndex].author}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-blue-500"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-blue-800 dark:border-blue-500"
                 />
-                <div className="absolute -bottom-2 -right-2 bg-blue-500 rounded-full p-1">
+                <div className="absolute -bottom-2 -right-2 bg-blue-800 dark:bg-blue-500 rounded-full p-1">
                   <motion.div 
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 1, repeat: Infinity }}
@@ -208,13 +209,13 @@ const TestimonialCarousel = () => {
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <div className="font-bold text-lg md:text-xl text-white mb-1">
+                <div className="font-bold text-lg md:text-xl text-gray-800 dark:text-white mb-1">
                   {testimonials[currentIndex].author}
                 </div>
-                <div className="text-blue-400 font-medium text-sm md:text-base">
+                <div className="text-blue-800 dark:text-blue-400 font-medium text-sm md:text-base">
                   {testimonials[currentIndex].role}
                 </div>
-                <div className="flex items-center gap-2 text-xs md:text-sm text-gray-400 mt-1 justify-center md:justify-start">
+                <div className="flex items-center gap-2 text-xs md:text-sm text-gray-800 dark:text-gray-400 mt-1 justify-center md:justify-start">
                   <Clock size={14} />
                   {testimonials[currentIndex].date}
                 </div>
@@ -229,7 +230,7 @@ const TestimonialCarousel = () => {
             >
               <div className="flex">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="text-yellow-400" size={16} fill="currentColor" />
+                  <Star key={i} className="text-yellow-600 dark:text-yellow-400" size={16} fill="currentColor" />
                 ))}
               </div>
             </motion.div>
@@ -240,7 +241,7 @@ const TestimonialCarousel = () => {
               transition={{ delay: 0.4 }}
               className="relative z-10 mb-4 md:mb-6"
             >
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed max-h-[200px] md:max-h-none overflow-y-auto">
+              <p className="dark:text-gray-300 text-base md:text-lg leading-relaxed max-h-[200px] md:max-h-none overflow-y-auto">
                 &quot;{testimonials[currentIndex].content}&quot;
               </p>
             </motion.div>
@@ -252,7 +253,7 @@ const TestimonialCarousel = () => {
               className="flex flex-wrap gap-2 justify-center md:justify-start"
             >
               {testimonials[currentIndex].tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-gray-700 text-blue-400 rounded-full text-xs md:text-sm">
+                <span key={tag} className="px-3 py-1 bg-gray-200 dark:bg-gray-700 dark:text-blue-400 text-gray-800 rounded-full text-xs md:text-sm">
                   #{tag}
                 </span>
               ))}
@@ -262,17 +263,9 @@ const TestimonialCarousel = () => {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-2 bg-gray-700 rounded-full"
-                onClick={() => setIsAutoplayPaused(!isAutoplayPaused)}
+                className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full"
               >
-                <Clock className={`${isAutoplayPaused ? 'text-gray-400' : 'text-blue-400'}`} size={16} />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 bg-gray-700 rounded-full"
-              >
-                <Share2 className="text-gray-400" size={16} />
+                <Share2 className="dark:text-gray-400" size={16} />
               </motion.button>
             </div>
           </motion.div>
@@ -283,7 +276,7 @@ const TestimonialCarousel = () => {
           {testimonials.map((_, index) => (
             <motion.button
               key={index}
-              className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-700'}`}
+              className={`w-2 h-2 rounded-full ${index === currentIndex ? 'bg-blue-800 dark:bg-blue-500' : 'bg-gray-300 dark:bg-gray-700'}`}
               onClick={() => {
                 setDirection(index > currentIndex ? 1 : -1);
                 setCurrentIndex(index);

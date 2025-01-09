@@ -254,7 +254,7 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   return (
-    <section id='experience' className="py-16 px-4 bg-white dark:bg-gray-900">
+    <section id='experience' className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center animate-fadeInUp bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">
           Trainer Experience

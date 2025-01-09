@@ -48,35 +48,35 @@ const volunteer_experiences = [
 
 const VolunteerExperiences = () => {
     return (
-      <section className="pt-24 px-8 bg-gray-900 text-white">
-        <h2 className="text-3xl font-bold text-center mb-12">Volunteer Experiences</h2>
+      <section className="pt-24 px-8 bg-gray-50 dark:bg-gray-900 dark:text-white mb-12">
+        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-400 transition-all duration-300">Volunteer Experiences</h2>
         <div className="grid gap-8 lg:grid-cols-2">
           {volunteer_experiences.map((experience) => (
             <div
               key={experience.id}
-              className="relative bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300"
+              className="relative bg-gradient-to-r from-gray-200 dark:from-gray-800 via-gray-100 dark:via-gray-700 to-gray-200 dark:to-gray-800 p-8 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300"
             >
-              <div className="absolute -top-10 left-6 bg-indigo-500 text-gray-900 p-4 rounded-full shadow-lg">
+              <div className="absolute -top-10 left-6 bg-indigo-500 text-gray-200  dark:text-gray-900 p-4 rounded-full shadow-lg">
                 <experience.icon size={40} />
               </div>
               <h3 className="mt-8 text-2xl font-semibold">{experience.role}</h3>
-              <p className="text-indigo-300 italic">{experience.company}</p>
-              <p className="text-gray-400 text-sm">{experience.duration}</p>
+              <p className="text-indigo-800 dark:text-indigo-300 italic">{experience.company}</p>
+              <p className="dark:text-gray-400 text-gray-800 text-sm">{experience.duration}</p>
               <div className="mt-6">
-                <h4 className="text-lg font-semibold text-indigo-300">Achievements:</h4>
-                <ul className="list-disc list-inside space-y-2 mt-2 text-gray-300">
+                <h4 className="text-lg font-semibold text-indigo-800 dark:text-indigo-300">Achievements:</h4>
+                <ul className="list-disc list-inside space-y-2 mt-2 dark:text-gray-300">
                   {experience.achievements.map((achievement, idx) => (
                     <li key={idx}>{achievement}</li>
                   ))}
                 </ul>
               </div>
               <div className="mt-6">
-                <h4 className="text-lg font-semibold text-indigo-300">Skills:</h4>
+                <h4 className="text-lg font-semibold text-indigo-800 dark:text-indigo-300">Skills:</h4>
                 <div className="flex flex-wrap gap-3 mt-2">
                   {experience.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-indigo-700 text-indigo-200 text-sm rounded-full shadow-md"
+                      className="px-3 py-1 bg-indigo-700 text-white dark:text-indigo-200 text-sm rounded-full shadow-md"
                     >
                       {skill}
                     </span>

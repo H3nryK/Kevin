@@ -47,7 +47,7 @@ const Navbar = () => {
           ? 'py-2 dark:bg-gray-900/95 bg-white/95 shadow-lg dark:shadow-gray-900/50' 
           : 'py-4 dark:bg-gray-900/80 bg-white/80'
         }
-        backdrop-blur-sm dark:border-gray-800 border-gray-200
+        backdrop-blur-sm dark:border-gray-800 border-gray-200 z-[100]
       `}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
