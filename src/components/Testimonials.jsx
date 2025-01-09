@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Quote, ChevronLeft, ChevronRight, Clock, ThumbsUp, Share2 } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, Clock, ThumbsUp, Share2 } from 'lucide-react';
 import { ImQuotesRight } from "react-icons/im";
 
 const TestimonialCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+  const [isAutoplayPaused] = useState(false);
 
   const testimonials = [
     {
