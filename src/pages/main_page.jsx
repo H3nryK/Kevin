@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import ContactSection from "../components/Contact";
 import SkillsSection from "../components/skills";
 import CTASection from "../components/CTA";
+import Testimonials from "../components/Testimonials";
 
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ const Main = () => {
       <SkillsSection />
       <CTASection />
       <ContactSection />
+      <Testimonials />
     </div>
   );
 };
