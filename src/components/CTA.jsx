@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Calendar, FileDown } from 'lucide-react';
+import { IoCalendarNumberOutline } from "react-icons/io5";
+import { IoIosCloudDownload } from "react-icons/io";
 
 const CTASection = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -15,20 +16,16 @@ const CTASection = () => {
   const cards = [
     {
       id: 'booking',
-      title: "Let's Talk",
       subtitle: 'Schedule a Meeting',
-      description: 'Book a 15-minute call to discuss potential opportunities and collaborations',
-      icon: Calendar,
+      icon: IoCalendarNumberOutline,
       action: handleBookTime,
       gradient: 'from-blue-500 to-indigo-600',
       hoverGradient: 'from-blue-600 to-indigo-700'
     },
     {
       id: 'cv',
-      title: 'My Experience',
       subtitle: 'Download CV',
-      description: 'Get a detailed overview of my skills, experience, and achievements',
-      icon: FileDown,
+      icon: IoIosCloudDownload    ,
       action: handleDownloadCV,
       gradient: 'from-emerald-500 to-teal-600',
       hoverGradient: 'from-emerald-600 to-teal-700'
@@ -60,19 +57,6 @@ const CTASection = () => {
                 
                 <div className="space-y-2">
                   <h3 className="text-white/90 dark:text-white text-xs uppercase tracking-wider">{card.subtitle}</h3>
-                  <h2 className="text-white dark:text-white text-2xl font-bold">{card.title}</h2>
-                  <p className="text-white/80 dark:text-white/80 text-sm leading-relaxed">{card.description}</p>
-                </div>
-                
-                <div className={`
-                  mt-6 inline-flex items-center text-white dark:text-white text-sm font-medium
-                  transform transition-all duration-300
-                  ${activeCard === card.id ? 'translate-x-2' : 'translate-x-0'}
-                `}>
-                  Learn more
-                  <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
                 </div>
               </div>
             </div>

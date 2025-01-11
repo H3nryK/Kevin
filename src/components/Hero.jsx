@@ -120,8 +120,8 @@ const Hero = () => {
               />
               
               {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-white/100 dark:from-black/100 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-gray-800 dark:text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                   <p className="text-sm font-light">
                   I am an explorer, dreamer, developer, thinker, and more. I am a multifaceted individual who finds joy in activities like swimming, 
                   reading, stargazing, and immersing myself in nature.

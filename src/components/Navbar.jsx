@@ -6,6 +6,14 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isDarkTheme, toggleTheme] = useTheme();
+
+    const handleBookTime = () => {
+      window.open('https://calendly.com/kevinobote49/15min', '_blank');
+    };
+  
+    const handleDownloadCV = () => {
+      window.open('/Kevin_Obote.pdf', '_blank');
+    };
   
     useEffect(() => {
       const handleScroll = () => {
@@ -77,6 +85,30 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
+
+              {/* Buttons */}
+              <button
+                onClick={handleDownloadCV}
+                className="
+                  px-4 py-2 rounded-lg 
+                  bg-green-500 text-white 
+                  hover:bg-green-600 
+                  transition-all duration-200
+                "
+              >
+                Resume
+              </button>
+              <button
+                onClick={handleBookTime}
+                className="
+                  px-4 py-2 rounded-lg 
+                  bg-blue-500 text-white 
+                  hover:bg-blue-600 
+                  transition-all duration-200
+                "
+              >
+                Talk to Me
+              </button>
               
               {/* Theme Toggle - Desktop */}
               <button
@@ -172,12 +204,45 @@ const Navbar = () => {
                     dark:hover:text-white hover:text-gray-900 
                     dark:hover:bg-gray-800 hover:bg-gray-100 
                     px-4 py-3 rounded-lg transition-all duration-200
+                    text-center
                   "
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
+              
+              {/* Buttons */}
+              <button
+                className="
+                  block w-full px-4 py-3 rounded-lg 
+                  bg-green-500 text-white 
+                  hover:bg-green-600 
+                  transition-all duration-200
+                  text-center
+                "
+                onClick={() => {
+                  handleDownloadCV();
+                  setIsMenuOpen(false);
+                }}
+              >
+                Resume
+              </button>
+              <button
+                className="
+                  block w-full px-4 py-3 rounded-lg 
+                  bg-blue-500 text-white 
+                  hover:bg-blue-600 
+                  transition-all duration-200
+                  text-center
+                "
+                onClick={() => {
+                  handleBookTime();
+                  setIsMenuOpen(false);
+                }}
+              >
+                Talk to Me
+              </button>
             </div>
           </div>
         </div>
