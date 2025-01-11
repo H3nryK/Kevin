@@ -7,6 +7,7 @@ import { FiInstagram } from "react-icons/fi";
 import Navbar from './Navbar';
 import { ThemeProvider } from '../contexts/theme-context';
 import BackToTop from './BackToTop';
+import AccessibilityOptions from './AccessibilityOptions';
 
 // Preloader Component
 const Preloader = () => {
@@ -24,7 +25,7 @@ const Preloader = () => {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-[500] flex items-center justify-center bg-gray-200 dark:bg-gray-900">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-gray-200 dark:bg-gray-900">
       <div className="relative">
         {/* Animated circles */}
         <div className="relative flex items-center justify-center">
@@ -149,6 +150,7 @@ const AppWrapper = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <AccessibilityOptions />
       <BackToTop />
     </ThemeProvider>
   );

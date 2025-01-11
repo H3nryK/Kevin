@@ -27,7 +27,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-4 right-4 z-[1000] p-3 rounded-full bg-blue-600 text-white shadow-lg transition-opacity duration-300 ${
+      className={`fixed bottom-4 right-4 z-[999] p-3 rounded-full bg-blue-600 text-white shadow-lg transition-opacity duration-300 ${
         visible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
       aria-label="Back to Top"
