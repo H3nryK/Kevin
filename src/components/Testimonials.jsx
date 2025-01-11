@@ -138,7 +138,7 @@ const TestimonialCarousel = () => {
   }, [isAutoplayPaused]);
 
   return (
-    <div className="py-8 md:py-12 px-4 bg-gradient-to-b from-gray-300 to-gray-50 dark:from-gray-900 dark:to-gray-700 overflow-hidden">
+    <div className="py-8 md:py-12 px-4 bg-gray-30 dark:bg-gray-900overflow-hidden">
       <div className="max-w-4xl mx-auto relative min-h-[450px] md:h-[400px]">
         {/* Navigation buttons - hidden on mobile, visible on larger screens */}
         <div className="hidden md:flex absolute z-50 inset-0 items-center justify-between pointer-events-none">

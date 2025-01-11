@@ -6,6 +6,7 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FiInstagram } from "react-icons/fi";
 import Navbar from './Navbar';
 import { ThemeProvider } from '../contexts/theme-context';
+import BackToTop from './BackToTop';
 
 // Preloader Component
 const Preloader = () => {
@@ -148,6 +149,7 @@ const AppWrapper = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <BackToTop />
     </ThemeProvider>
   );
 };
