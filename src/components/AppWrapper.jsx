@@ -7,6 +7,7 @@ import { FiInstagram } from "react-icons/fi";
 import Navbar from './Navbar';
 import { ThemeProvider } from '../contexts/theme-context';
 import BackToTop from './BackToTop';
+import AccessibilityMenu from './AccessibilityMenu';
 
 // Preloader Component
 const Preloader = () => {
@@ -149,6 +150,7 @@ const AppWrapper = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <AccessibilityMenu />
       <BackToTop />
     </ThemeProvider>
   );
