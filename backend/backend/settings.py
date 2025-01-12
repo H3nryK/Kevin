@@ -132,10 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Or your email provider's SMTP server
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@gmail.com'  # Your email address
-EMAIL_HOST_PASSWORD = 'your-app-password'  # Your email password or app-specific password
-DEFAULT_FROM_EMAIL = 'your-email@gmail.com'
-CONTACT_EMAIL = 'recipient-email@example.com'  # Where you want to receive contact form messages
+EMAIL_HOST = ''  # Your outgoing mail server
+EMAIL_PORT = 465  # SMTP Port for secure SSL
+EMAIL_USE_SSL = True  # Since you're using SMTP with SSL
+EMAIL_HOST_USER = ''  # Your email address
+EMAIL_HOST_PASSWORD = ''  # Email account's password  # Your email password or app-specific password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+CONTACT_EMAIL = ''  # Where you want to receive contact form messages
