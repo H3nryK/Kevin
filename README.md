@@ -57,33 +57,46 @@ To run this project locally, follow these steps:
    ```bash
    cd kevin
    ```
-3. **Navigate to the Frontend directory**:
+3. **Navigate to the Backend directory**:
    ```bash
-   cd frontend
+   cd backend
    ```
-4.  **Install dependencies**:
-   ```bash
-   npm install  or yarn 
-   ```
-5. **Start the development server**:
-   ```bash
-   npm run dev or yarn dev
-   ```
-6. **Open your browser**:
-   Visit [http://localhost:5173](http://localhost:5173) to view the portfolio.
-
-7. **Navigate to the Backend directory**:
-   ```bash
-   cd ../backend
-   ```
-8. **Install dependencies**:
+4. **Install dependencies**:
    ```bash
    pip install django djangorestframework django-cors-headers
    ```
-9. **Start the development server**:
+5. **Setup Email Settings**
+   ```bash
+   # backend/settings.py
+
+   # Email settings
+   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+   EMAIL_HOST = ''  # Your outgoing mail server
+   EMAIL_PORT = 465  # SMTP Port for secure SSL
+   EMAIL_USE_SSL = True  # Since you're using SMTP with SSL
+   EMAIL_HOST_USER = ''  # Your email address
+   EMAIL_HOST_PASSWORD = ''  # Email account's password  # Your email password or app-specific password
+   DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+   CONTACT_EMAIL = ''  # Where you want to receive contact form messages
+   ```
+6. **Start the development server**:
    ```bash
    python manage.py runserver
    ```
+7. **Navigate to the Frontend directory**:
+   ```bash
+   cd ../frontend
+   ```
+8.  **Install dependencies**:
+   ```bash
+   npm install  or yarn 
+   ```
+9. **Start the development server**:
+   ```bash
+   npm run dev or yarn dev
+   ```
+10. **Open your browser**:
+   Visit [http://localhost:5173](http://localhost:5173) to view the portfolio.
 
 ---
 
